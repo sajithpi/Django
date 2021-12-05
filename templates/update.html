@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Update User Details
+{% endblock title %}
+
+{% block body %}
+<form class="mt-5" method="POST" action="" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="container rounded-3 my-5 bgcontainer p-5 shadow  box w-50">
+<table class="offset-2">
+    <div class="d-flex">
+        <div class=" text-center offset-2">
+            <img class=" mb-3 " src={{object.image.url}} id="imgload" src='' width="175px"
+                height="175px" alt="" />
+        </div>
+        <div class="d-flex">
+            {{ form.as_table }}
+        </div>   
+    </div>
+</table>
+
+<div class="w-100 offset-2" >
+    <button class="btn btn-success m-5" type="submit">Update User</button>
+</div>
+</div>
+</form>
+{% endblock %}
+
+

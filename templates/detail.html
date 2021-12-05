@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block title %}
+DetailUserView
+{% endblock title %}
+DetailUserView
+
+{% block  body %}
+<body class="background">
+    <div class="container rounded-3 my-5 bgcontainer  shadow  box">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="
+                  d-flex
+                  align-items-stretch
+                  flex-column
+                  h-75
+                  <!-- h-50 -->
+                  justify-content-center
+                  ">
+                    <div class="row mt-md-5">
+                        <div class="col text-center">
+                            <img class="rounded-circle mb-3" id="imgload" src='{{ object.image.url }}' width="175px"
+                                height="175px" alt="" />
+                            <h5 class="myname">{{ object.name }}</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <small>
+                                <p class="idinfo fs-6 text-light" aria-placeholder="Idinfo">User Link</p>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 px-0 mt-md-3">
+                <h2 class="fw-semi-bold my-3 pb-1" id="profileh3">{{object.name}} Profile</h2>
+                <div class="container border mt-4 ">
+                    <div class="row mt-5 mb-3">
+                        <div class="col-7">
+                            <label class="fs-4" for="name">UserName</label>
+                            <input class=" w-100 form-control shadow" type="text" name="name" id="name"
+                                placeholder="UserName" aria-label="Name" value="{{ object.name }}"disabled />
+                        </div>
+                        <div class="col-3">
+                            <label class="fs-4 for="id">UserID</label>
+                            <input class=" w-70 form-control" type="text" name="id" id="id" placeholder="UserID"
+                                value="{{ object.id }}" disabled />
+                        </div>
+                    </div>
+                    <div class="row mb-4 mb-4">
+                        <div class="col-12">
+                            <label class="fs-4" for="gender">Gender</label>
+                            <input class=" w-100 form-control" type="text" name="gender" id="gender"
+                                placeholder="Gender" value="{{ object.gender }}" disabled/>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-5">
+                            <label class="fs-4" for="hairColor">Age</label>
+                            <input class="w-100 form-control" type="Age" name="name" id="age" placeholder="Age"
+                                value="{{ object.age }}" disabled/>
+                        </div>
+                        <div class="col-7">
+                            <label class="fs-4 for="eyeColor">Email</label>
+                            <input class="w-100 form-control" type="eyeColor" name="email" id="email"
+                                placeholder="Email" value="{{ object.email }}" disabled/>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <label class="fs-4 for="occupation">Occupation</label>
+                            <input class=" w-100 form-control" type="text" name="occupation" id="occupation"
+                                placeholder="Occupation" value="{{ object.occupation }}"disabled />
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-7">
+                            <label class="fs-4 for="Place">Place</label>
+                            <input class="w-100 form-control" type="Place" name="Place" id="Place" placeholder="Place"
+                                value="{{ object.place }}" disabled/>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="flex text-center mt-4">
+                        <a href="{% url 'myapp:update' object.id%}" class="btn btn-outline-success shadow">Update</a>
+                        <a href="{% url 'myapp:delete' object.id%}" class="btn btn-danger">Delete</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-3">dfds</div> -->
+        </div>
+    </div>
+
+
+
+    {% endblock  %}

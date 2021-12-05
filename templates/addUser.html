@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Add New User Details
+{% endblock title %}
+
+{% block body %}
+<form method="POST" action="" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="container rounded-3 my-5 bgcontainer p-5 shadow  box w-50">
+    <h2 class="fw-semi-bold my-3 pb-1" id="profileh3">User Profile</h2>
+    <div class="my-3">
+        {{form.as_table}}
+    </table>
+    </div>
+    <div>
+        <button class="btn btn-outline-dark" type="submit">Add User</button>
+    </div>
+</div>
+
+</form>
+{% endblock %}
